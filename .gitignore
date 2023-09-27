@@ -1,0 +1,5 @@
+.idea/
+application/*
+!application/composer.json
+mysql/*
+.env

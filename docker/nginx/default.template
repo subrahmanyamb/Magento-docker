@@ -1,0 +1,13 @@
+ upstream fastcgi_backend {
+     server app:9000;
+ }
+
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name ${NGINX_HOST};
+    ssl_certificate /etc/ssl/server.crt;
+    ssl_certificate_key /etc/ssl/server.key;
+    set $MAGE_ROOT /srv;
+    include /srv/nginx.conf.sample;
+}
