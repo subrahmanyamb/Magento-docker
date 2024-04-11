@@ -50,9 +50,9 @@ COPY --from=composer:2.2 /usr/bin/composer /usr/bin/composer
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER 1
 # create composer cache directory
+
 RUN mkdir -p /var/www/.composer && chown -R www-data /var/www/.composer
 
-RUN usermod -u 1000 www-data
 
 # npm & node
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
